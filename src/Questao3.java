@@ -17,7 +17,7 @@ public class Questao3 {
         Random random = new Random();
         String cand1, cand2, cand3, cand4, nVencedor = "";
         int nAlunos, qntVotosVencedor = 0;
-        Map<String, Integer> votos = new HashMap<>();
+        Map<String, Integer> votos = new HashMap<>(4);
 
         simplePrint("Digite o nome do primeiro candidato: ");
         cand1 = scanner.next();
@@ -51,21 +51,15 @@ public class Questao3 {
                     break;
             }
         }
-
+        // Loop de impressão dos votos
         for (Map.Entry<String, Integer> entry : votos.entrySet()) {
-            System.out.printf(
-                    "O candidato %s, recebeu um total de %d votos.\n",
-                    entry.getKey(), entry.getValue());
+            System.out.printf("O candidato %s, recebeu um total de %d votos.\n", entry.getKey(), entry.getValue());
             if (entry.getValue() > qntVotosVencedor) {
                 qntVotosVencedor = entry.getValue();
                 nVencedor = entry.getKey();
             }
         }
-        simplePrint("\n\n\n " +
-                "O candidato vencedor foi o " + nVencedor + " com " + qntVotosVencedor + " votos.");
+        simplePrint("\n\n\n O candidato vencedor foi o " + nVencedor + " com " + qntVotosVencedor + " votos.");
     }
-
-    static void simplePrint(String s) {
-        System.out.println(s);
-    }
+    static void simplePrint(String s) { System.out.println(s);}
 }
