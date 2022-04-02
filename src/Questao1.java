@@ -19,6 +19,6 @@ public class Questao1 {
             if (numeroEntrada < random)
                 System.out.println("O numero gerado é maior, tente novamente:");
         }
-        System.out.printf("Voce acertou o numero depois de %d tentativas", contadorTentativas);
+        System.out.printf("Você acertou o numero depois de %d tentativas", contadorTentativas);
     }
 }
